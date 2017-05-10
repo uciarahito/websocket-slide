@@ -1,5 +1,3 @@
-var firebase = require("firebase");
-
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyC6I9fG6kCLGyQZGuN5d568b26o3KNscw0",
@@ -13,7 +11,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 let userId = 'if313045'
-var starCountRef = firebase.database().ref('users/' + userId);
+var starCountRef = database.ref('users/' + userId);
 starCountRef.on('value', function(data) {
     console.log(data.val());
     console.log('data berhasil di read');
